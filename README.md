@@ -1,3 +1,3 @@
 # setup
 
-This project contains necessary files which is kisck start for new flutter project.
+This project contains necessary files which is kick start for flutter project.
