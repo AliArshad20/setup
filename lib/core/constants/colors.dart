@@ -10,6 +10,7 @@ const Color kBlack = Colors.black;
 final Color kLightGrey = Colors.grey;
 const Color kDarkDivider = Color(0xFF393D45);
 
+
 // Scaffold & Background
 const Color kLightBackground = Color(0xFFF6F7F9);
 const Color kDarkBackground = Color(0xFF0E1116);
@@ -30,3 +31,8 @@ const Color kInfo = Color(0xFF00968A);
 const Color kFavorite = Colors.red;
 const Color kUnfavorite = Colors.grey;
 const Color kRatingStar = Color(0xFFF5C609);
+
+//theme color
+ColorScheme themeColor(context) {
+  return Theme.of(context).colorScheme;
+}

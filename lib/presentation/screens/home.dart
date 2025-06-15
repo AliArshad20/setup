@@ -22,6 +22,9 @@ class _HomePageState extends State<HomePage> {
         actions: [
           Switch(
             value: themeProvider.darkTheme,
+            thumbColor: MaterialStateProperty.all(themeColor(context).onError),
+            overlayColor: MaterialStateProperty.all(themeColor(context).background),
+
             onChanged: (_) {
               themeProvider.toggleTheme();
             },
