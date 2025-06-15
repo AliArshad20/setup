@@ -133,7 +133,7 @@ class AppTheme {
     useMaterial3: true,
     brightness: Brightness.dark,
     primaryColor: kPrimaryColor,
-    scaffoldBackgroundColor: kDarkBackground,
+    scaffoldBackgroundColor: kLightGrey,
     fontFamily: GoogleFonts.montserrat().fontFamily,
 
     textTheme: GoogleFonts.montserratTextTheme().apply(

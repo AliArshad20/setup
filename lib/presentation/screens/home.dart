@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:setup/core/constants/colors.dart';
 import 'package:setup/data/providers/theme_provider.dart';
 import 'package:setup/presentation/widgets/alertbox.dart';
 import 'package:setup/routes/app_routes.dart';

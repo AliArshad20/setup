@@ -7,7 +7,7 @@ const Color kSecondaryColor = Color(0xFFF3F4FA);
 // Neutral Colors
 const Color kWhite = Colors.white;
 const Color kBlack = Colors.black;
-final Color kLightGrey = Colors.grey.withOpacity(0.1);
+final Color kLightGrey = Colors.grey;
 const Color kDarkDivider = Color(0xFF393D45);
 
 // Scaffold & Background
