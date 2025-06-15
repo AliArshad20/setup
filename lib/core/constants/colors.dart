@@ -1,40 +1,32 @@
 import 'package:flutter/material.dart';
 
-var defaultPrimaryColor = Color(0xFF5f60b9);
-var primaryColor = defaultPrimaryColor;
-const secondaryPrimaryColor = Color(0xfff3f4fa);
-const white = Colors.white;
-const black = Colors.black;
+// Brand Colors
+const Color kPrimaryColor = Color(0xFF5F60B9);
+const Color kSecondaryColor = Color(0xFFF3F4FA);
 
-var lightgrey = Colors.grey.withOpacity(0.3);
+// Neutral Colors
+const Color kWhite = Colors.white;
+const Color kBlack = Colors.black;
+final Color kLightGrey = Colors.grey.withOpacity(0.1);
+const Color kDarkDivider = Color(0xFF393D45);
 
-const dividerDarkColor = Color(0xFF393D45);
+// Scaffold & Background
+const Color kLightBackground = Color(0xFFF6F7F9);
+const Color kDarkBackground = Color(0xFF0E1116);
+const Color kDarkSecondaryBackground = Color(0xFF1C1F26);
+const Color kCardDark = Color(0xFF1F222A);
 
+// Text
+const Color kTextPrimary = Color(0xFF1C1F34);
+const Color kTextSecondary = Color(0xFF6C757D);
 
-//Text Color
-const appTextPrimaryColor = Color(0xff1C1F34);
-// const appTextPrimaryColor = Colors.red;
-const appTextSecondaryColor = Color(0xff6C757D);
-// const appTextSecondaryColor = Colors.red;
-const cardColor = Color(0xFFF6F7F9);
-const borderColor = Color(0xFFEBEBEB);
+// States & Actions
+const Color kError = Color(0xFFC41520);
+const Color kSuccess = Color(0xFF3CAE5C);
+const Color kWarning = Color(0xFFFFBD49);
+const Color kInfo = Color(0xFF00968A);
 
-const scaffoldColorDark = Color(0xFF0E1116);
-const scaffoldSecondaryDark = Color(0xFF1C1F26);
-const appButtonColorDark = Color(0xFF282828);
-
-const ratingBarColor = Color(0xfff5c609);
-const verifyAcColor = Colors.blue;
-const favouriteColor = Colors.red;
-const unFavouriteColor = Colors.grey;
-
-//Status Color
-const pendingColor = Color(0xFFEA2F2F);
-const acceptColor = Color(0xFF00968A);
-const onGoingColor = Color(0xFFFD6922);
-const inProgressColor = Color(0xFFFD6922);
-const holdColor = Color(0xFFFFBD49);
-const cancelledColor = Color(0xffFF0303);
-const rejectedColor = Color(0xFF400D0A);
-const failedColor = Color(0xFFC41520);
-const completedColor = Color(0xFF3CAE5C);
+// Favorites / Misc
+const Color kFavorite = Colors.red;
+const Color kUnfavorite = Colors.grey;
+const Color kRatingStar = Color(0xFFF5C609);

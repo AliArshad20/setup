@@ -6,165 +6,230 @@ import '../constants/colors.dart';
 class AppTheme {
   AppTheme._();
 
-  static ThemeData lightTheme({Color? color}) => ThemeData(
-    primarySwatch: Colors.deepPurple,
-    primaryColor: color ?? primaryColor,
-    scaffoldBackgroundColor: Colors.white,
-    fontFamily: GoogleFonts.workSans().fontFamily,
+  static final ThemeData lightTheme = ThemeData(
     useMaterial3: true,
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.white),
-    iconTheme: IconThemeData(color: appTextSecondaryColor),
-    textTheme: GoogleFonts.workSansTextTheme(),
-    dialogBackgroundColor: white,
-    unselectedWidgetColor: black,
-    dividerColor: borderColor,
-    // bottomSheetTheme: BottomSheetThemeData(
-    //   shape: RoundedRectangleBorder(borderRadius: radiusOnly(topLeft: defaultRadius, topRight: defaultRadius)),
-    //   backgroundColor: Colors.white,
-    // ),
-    cardColor: cardColor,
-    appBarTheme: AppBarTheme(systemOverlayStyle: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light)),
-    // dialogTheme: DialogTheme(shape: dialogShape()),
-    pageTransitionsTheme: PageTransitionsTheme(
-      builders: <TargetPlatform, PageTransitionsBuilder>{
-        TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
-        TargetPlatform.linux: OpenUpwardsPageTransitionsBuilder(),
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      },
+    brightness: Brightness.light,
+    primaryColor: kPrimaryColor,
+    scaffoldBackgroundColor: kWhite,
+    fontFamily: GoogleFonts.montserrat().fontFamily,
+
+    // Text theme
+    textTheme: GoogleFonts.montserratTextTheme().apply(
+      bodyColor: kTextPrimary,
+      displayColor: kTextPrimary,
+    ),
+
+    // AppBar
+    appBarTheme: const AppBarTheme(
+      backgroundColor: kWhite,
+      elevation: 1,
+      iconTheme: IconThemeData(color: kTextPrimary),
+      titleTextStyle: TextStyle(color: kTextPrimary, fontSize: 20),
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: kWhite,
+        statusBarIconBrightness: Brightness.dark,
+      ),
+    ),
+
+    // Icons
+    iconTheme: const IconThemeData(color: kTextSecondary),
+
+    // Cards
+    cardColor: kLightBackground,
+
+    // Dividers
+    dividerColor: kLightGrey,
+
+    // Dialogs
+    dialogBackgroundColor: kWhite,
+
+    // Bottom nav
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: kWhite,
+      selectedItemColor: kPrimaryColor,
+      unselectedItemColor: kTextSecondary,
+    ),
+
+    // Floating button
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: kPrimaryColor,
+      foregroundColor: kWhite,
+    ),
+
+    // SnackBars
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: kPrimaryColor,
+      contentTextStyle: TextStyle(color: kWhite),
+    ),
+
+    // Inputs
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: kLightGrey,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide.none,
+      ),
+      hintStyle: TextStyle(color: kTextSecondary),
+      labelStyle: TextStyle(color: kTextPrimary),
+    ),
+
+    // Buttons
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: kPrimaryColor,
+        textStyle: const TextStyle(fontWeight: FontWeight.w600),
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: kPrimaryColor,
+        foregroundColor: kWhite,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: kPrimaryColor,
+        side: const BorderSide(color: kPrimaryColor),
+      ),
+    ),
+
+    // Popup menu
+    popupMenuTheme: const PopupMenuThemeData(
+      color: kWhite,
+      textStyle: TextStyle(color: kTextPrimary),
+    ),
+
+    // Tooltip
+    tooltipTheme: const TooltipThemeData(
+      decoration: BoxDecoration(color: kPrimaryColor),
+      textStyle: TextStyle(color: kWhite),
+    ),
+
+    // Chips
+    chipTheme: ChipThemeData(
+      backgroundColor: kLightGrey,
+      selectedColor: kPrimaryColor,
+      labelStyle: const TextStyle(color: kTextPrimary),
+      secondaryLabelStyle: const TextStyle(color: kWhite),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      disabledColor: kLightGrey,
+      secondarySelectedColor: kPrimaryColor,
+    ),
+
+    // Scrollbar
+    scrollbarTheme: ScrollbarThemeData(
+      thumbColor: MaterialStateProperty.all(kPrimaryColor.withOpacity(0.7)),
+    ),
+
+    // Progress indicators
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: kPrimaryColor,
     ),
   );
 
-  static ThemeData darkTheme({Color? color}) => ThemeData(
-    primarySwatch: Colors.deepPurple,
-    // createMaterialColor(primaryColor),
-    primaryColor: primaryColor,
-    appBarTheme: AppBarTheme(
-      color: Colors.grey,
-      systemOverlayStyle: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
-    ),
-    scaffoldBackgroundColor: scaffoldColorDark,
-    fontFamily: GoogleFonts.workSans().fontFamily,
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: scaffoldSecondaryDark),
-    iconTheme: IconThemeData(color: Colors.white),
-    textTheme: GoogleFonts.workSansTextTheme(),
-    dialogBackgroundColor: scaffoldSecondaryDark,
-    unselectedWidgetColor: Colors.white60,
+  static final ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    // bottomSheetTheme: BottomSheetThemeData(
-    //   shape: RoundedRectangleBorder(borderRadius: radiusOnly(topLeft: defaultRadius, topRight: defaultRadius)),
-    //   backgroundColor: scaffoldSecondaryDark,
-    // ),
-    dividerColor: dividerDarkColor,
-    cardColor: scaffoldSecondaryDark,
-    // dialogTheme: DialogTheme(shape: dialogShape()),
-  ).copyWith(
-    pageTransitionsTheme: PageTransitionsTheme(
-      builders: <TargetPlatform, PageTransitionsBuilder>{
-        TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
-        TargetPlatform.linux: OpenUpwardsPageTransitionsBuilder(),
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      },
-    ),
-  );
-  static ThemeData customTheme({Color? color}) => ThemeData(
-    // primarySwatch: createMaterialColor(Colors.black),
-    primaryColor: Colors.black,
-    appBarTheme: AppBarTheme(
-      systemOverlayStyle: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
-    ),
-    scaffoldBackgroundColor: scaffoldColorDark,
-    fontFamily: GoogleFonts.workSans().fontFamily,
-    bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: black),
-    backgroundColor: Colors.white,
-    iconTheme: IconThemeData(color: Colors.white),
-    textTheme: GoogleFonts.workSansTextTheme(),
-    dialogBackgroundColor: lightgrey,
-    unselectedWidgetColor: Colors.white,
-    secondaryHeaderColor: Colors.red,
-    // selectedRowColor: Colors.black,
-    // useMaterial3: true,
-    // bottomSheetTheme: BottomSheetThemeData(
-    //   shape: RoundedRectangleBorder(borderRadius: radiusOnly(topLeft: defaultRadius, topRight: defaultRadius)),
-    //   backgroundColor: redColor,
-    // ),
+    brightness: Brightness.dark,
+    primaryColor: kPrimaryColor,
+    scaffoldBackgroundColor: kDarkBackground,
+    fontFamily: GoogleFonts.montserrat().fontFamily,
 
-    // dividerColor:appStore.isDarkMode? Colors.white:primaryColor,
-    // cardColor: appStore.isDarkMode? Colors.black:primaryColor,
+    textTheme: GoogleFonts.montserratTextTheme().apply(
+      bodyColor: kWhite,
+      displayColor: kWhite,
+    ),
 
-    // dialogTheme: DialogTheme(shape: dialogShape(),backgroundColor: Colors.grey[850]),
-  ).copyWith(
-    pageTransitionsTheme: PageTransitionsTheme(
-      builders: <TargetPlatform, PageTransitionsBuilder>{
-        TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
-        TargetPlatform.linux: OpenUpwardsPageTransitionsBuilder(),
-        TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-      },
+    appBarTheme: const AppBarTheme(
+      backgroundColor: kCardDark,
+      elevation: 1,
+      iconTheme: IconThemeData(color: kWhite),
+      titleTextStyle: TextStyle(color: kWhite, fontSize: 20),
+      systemOverlayStyle: SystemUiOverlayStyle(
+        statusBarColor: kCardDark,
+        statusBarIconBrightness: Brightness.light,
+      ),
+    ),
+
+    iconTheme: const IconThemeData(color: kWhite),
+    cardColor: kCardDark,
+    dividerColor: kDarkDivider,
+    dialogBackgroundColor: kDarkSecondaryBackground,
+
+    bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+      backgroundColor: kDarkSecondaryBackground,
+      selectedItemColor: kPrimaryColor,
+      unselectedItemColor: kWhite,
+    ),
+
+    floatingActionButtonTheme: const FloatingActionButtonThemeData(
+      backgroundColor: kPrimaryColor,
+      foregroundColor: kWhite,
+    ),
+
+    snackBarTheme: const SnackBarThemeData(
+      backgroundColor: kPrimaryColor,
+      contentTextStyle: TextStyle(color: kWhite),
+    ),
+
+    inputDecorationTheme: InputDecorationTheme(
+      filled: true,
+      fillColor: kDarkSecondaryBackground,
+      border: OutlineInputBorder(
+        borderRadius: BorderRadius.circular(8),
+        borderSide: BorderSide.none,
+      ),
+      hintStyle: TextStyle(color: kTextSecondary),
+      labelStyle: TextStyle(color: kWhite),
+    ),
+
+    textButtonTheme: TextButtonThemeData(
+      style: TextButton.styleFrom(
+        foregroundColor: kPrimaryColor,
+        textStyle: const TextStyle(fontWeight: FontWeight.w600),
+      ),
+    ),
+    elevatedButtonTheme: ElevatedButtonThemeData(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: kPrimaryColor,
+        foregroundColor: kWhite,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+      ),
+    ),
+    outlinedButtonTheme: OutlinedButtonThemeData(
+      style: OutlinedButton.styleFrom(
+        foregroundColor: kPrimaryColor,
+        side: const BorderSide(color: kPrimaryColor),
+      ),
+    ),
+
+    popupMenuTheme: const PopupMenuThemeData(
+      color: kCardDark,
+      textStyle: TextStyle(color: kWhite),
+    ),
+
+    tooltipTheme: const TooltipThemeData(
+      decoration: BoxDecoration(color: kPrimaryColor),
+      textStyle: TextStyle(color: kWhite),
+    ),
+
+    chipTheme: ChipThemeData(
+      backgroundColor: kDarkSecondaryBackground,
+      selectedColor: kPrimaryColor,
+      labelStyle: const TextStyle(color: kWhite),
+      secondaryLabelStyle: const TextStyle(color: kBlack),
+      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      disabledColor: kDarkDivider,
+      secondarySelectedColor: kPrimaryColor,
+    ),
+
+    scrollbarTheme: ScrollbarThemeData(
+      thumbColor: MaterialStateProperty.all(kPrimaryColor.withOpacity(0.7)),
+    ),
+
+    progressIndicatorTheme: const ProgressIndicatorThemeData(
+      color: kPrimaryColor,
     ),
   );
 }
-/*
-
-static final ThemeData lightTheme = ThemeData(
-  primarySwatch: createMaterialColor(primaryColor),
-  primaryColor: primaryColor,
-  scaffoldBackgroundColor: Colors.white,
-  fontFamily: GoogleFonts.montserrat().fontFamily,
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: Colors.white),
-  iconTheme: IconThemeData(color: scaffoldSecondaryDark),
-  textTheme: GoogleFonts.workSansTextTheme(),
-  dialogBackgroundColor: Colors.white,
-  unselectedWidgetColor: Colors.black,
-  dividerColor: viewLineColor,
-  bottomSheetTheme: BottomSheetThemeData(
-    shape: RoundedRectangleBorder(borderRadius: radiusOnly(topLeft: defaultRadius, topRight: defaultRadius)),
-    backgroundColor: Colors.white,
-  ),
-  cardColor: Colors.white,
-  appBarTheme: AppBarTheme(
-    systemOverlayStyle: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.dark),
-  ),
-  dialogTheme: DialogTheme(shape: dialogShape()),
-).copyWith(
-  pageTransitionsTheme: PageTransitionsTheme(
-    builders: <TargetPlatform, PageTransitionsBuilder>{
-      TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
-      TargetPlatform.linux: OpenUpwardsPageTransitionsBuilder(),
-      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-    },
-  ),
-);
-
-static final ThemeData darkTheme = ThemeData(
-  primarySwatch: createMaterialColor(primaryColor),
-  primaryColor: scaffoldSecondaryDark,
-  accentColor: Colors.red,
-  appBarTheme: AppBarTheme(
-    //color: appBackgroundColorDark,
-    //iconTheme: IconThemeData(color: white),
-    systemOverlayStyle: SystemUiOverlayStyle(statusBarIconBrightness: Brightness.light),
-  ),
-  scaffoldBackgroundColor: scaffoldColorDark,
-  fontFamily: GoogleFonts.montserrat().fontFamily,
-  bottomNavigationBarTheme: BottomNavigationBarThemeData(backgroundColor: scaffoldSecondaryDark),
-  iconTheme: IconThemeData(color: Colors.white),
-  textTheme: GoogleFonts.workSansTextTheme(),
-  dialogBackgroundColor: scaffoldSecondaryDark,
-  unselectedWidgetColor: Colors.white60,
-  bottomSheetTheme: BottomSheetThemeData(
-    shape: RoundedRectangleBorder(borderRadius: radiusOnly(topLeft: defaultRadius, topRight: defaultRadius)),
-    backgroundColor: scaffoldSecondaryDark,
-  ),
-  dividerColor: Colors.white12,
-  cardColor: scaffoldSecondaryDark,
-  dialogTheme: DialogTheme(shape: dialogShape()),
-).copyWith(
-  pageTransitionsTheme: PageTransitionsTheme(
-    builders: <TargetPlatform, PageTransitionsBuilder>{
-      TargetPlatform.android: OpenUpwardsPageTransitionsBuilder(),
-      TargetPlatform.linux: OpenUpwardsPageTransitionsBuilder(),
-      TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
-    },
-  ),
-);
-}
-*/

@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:setup/core/themes/theme.dart';
 
 class ThemeProvider extends ChangeNotifier{
 
-  bool isdark = false;
+  bool darkTheme = false;
 
-  themeMode() {
-    return isdark==true? ThemeData.dark():ThemeData.light();
-    n
-  }
-   toggleTheme() {
-    isDark
+  ThemeData get themeMode => darkTheme? AppTheme.darkTheme : AppTheme.lightTheme;
+
+  toggleTheme() {
+    darkTheme = darkTheme == true? false:true;
+    notifyListeners();
    }
 
 }
