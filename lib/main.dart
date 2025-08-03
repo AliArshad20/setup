@@ -16,7 +16,7 @@ void main() async {
       providers: [
         ChangeNotifierProvider(create: (context) => ThemeProvider(),)
       ],
-      child: const MyApp(),
+      child: await MyApp(),
     ),
   );
 }
